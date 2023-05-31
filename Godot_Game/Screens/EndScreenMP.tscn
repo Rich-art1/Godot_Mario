@@ -1,0 +1,227 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Font/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/QuitButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Screens/EndScreen.gd" type="Script" id=5]
+[ext_resource path="res://Sounds/TheEnd.mp3" type="AudioStream" id=6]
+[ext_resource path="res://danceSprite.png" type="Texture" id=7]
+[ext_resource path="res://danceSpriteLuigi.png" type="Texture" id=8]
+[ext_resource path="res://background.jpg" type="Texture" id=9]
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 311, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 622, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 933, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1244, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 311, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 622, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 933, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1244, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 832, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 311, 832, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 311, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 622, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 933, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1244, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 311, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 622, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 933, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1244, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 832, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 311, 832, 311, 416 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "Dance",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "DanceLuigi",
+"speed": 7.0
+} ]
+
+[node name="EndScreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="Title" parent="." instance=ExtResource( 2 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -136.5
+margin_top = -166.5
+margin_right = 136.5
+margin_bottom = -120.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Congratulations"
+valign = 1
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.5
+margin_top = -107.0
+margin_right = 69.5
+margin_bottom = -45.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Final Score: %s
+Deaths: %s"
+align = 1
+
+[node name="Menu" type="VBoxContainer" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -106.0
+margin_top = -23.5
+margin_right = 106.0
+margin_bottom = 90.5
+
+[node name="PlayButton" parent="Menu" instance=ExtResource( 3 )]
+pause_mode = 2
+margin_right = 212.0
+text = "Play again"
+next_scene_path = "res://Screens/MainScreen.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 4 )]
+pause_mode = 2
+margin_top = 59.0
+margin_right = 212.0
+margin_bottom = 114.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -19.93
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 217, 289 )
+frames = SubResource( 13 )
+animation = "Dance"
+frame = 6
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 946, 287 )
+rotation = 6.28319
+frames = SubResource( 13 )
+animation = "DanceLuigi"
+frame = 5
+playing = true
+flip_h = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="Background" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 594, 313.625 )
+scale = Vector2( 1.24688, 1.16528 )
+texture = ExtResource( 9 )

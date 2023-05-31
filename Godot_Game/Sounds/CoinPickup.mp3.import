@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/CoinPickup.mp3-e2174892bf2be7d241c57329e5350ea5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/CoinPickup.mp3"
+dest_files=[ "res://.import/CoinPickup.mp3-e2174892bf2be7d241c57329e5350ea5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

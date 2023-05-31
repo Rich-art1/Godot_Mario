@@ -1,0 +1,150 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Font/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/QuitButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Screens/EndScreen.gd" type="Script" id=5]
+[ext_resource path="res://Sounds/TheEnd.mp3" type="AudioStream" id=6]
+[ext_resource path="res://danceSprite.png" type="Texture" id=7]
+[ext_resource path="res://background.jpg" type="Texture" id=8]
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 311, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 622, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 933, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1244, 0, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 311, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 622, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 933, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1244, 416, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 832, 311, 416 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 311, 832, 311, 416 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "Dance",
+"speed": 7.0
+} ]
+
+[node name="EndScreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="Background" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 726.75, 315 )
+scale = Vector2( 1.02133, 1.17037 )
+texture = ExtResource( 8 )
+
+[node name="Title" parent="." instance=ExtResource( 2 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 54.0
+margin_top = -138.5
+margin_right = 327.0
+margin_bottom = -92.5
+text = "Congratulations"
+valign = 1
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 121.0
+margin_top = -79.0
+margin_right = 260.0
+margin_bottom = -17.0
+text = "Final Score: %s
+Deaths: %s"
+align = 1
+
+[node name="Menu" type="VBoxContainer" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 84.5
+margin_top = 4.5
+margin_right = 296.5
+margin_bottom = 118.5
+
+[node name="PlayButton" parent="Menu" instance=ExtResource( 3 )]
+pause_mode = 2
+margin_right = 212.0
+text = "Play again"
+next_scene_path = "res://Screens/MainScreen.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 4 )]
+pause_mode = 2
+margin_top = 59.0
+margin_right = 212.0
+margin_bottom = 114.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -19.93
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 339, 335 )
+frames = SubResource( 13 )
+animation = "Dance"
+frame = 10
+playing = true

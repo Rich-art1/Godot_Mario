@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/TheEnd.mp3-16e56afb1a02951ca53c3c39a1f03a4d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/TheEnd.mp3"
+dest_files=[ "res://.import/TheEnd.mp3-16e56afb1a02951ca53c3c39a1f03a4d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
